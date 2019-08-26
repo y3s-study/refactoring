@@ -1,4 +1,4 @@
-package yj.ch01.example.video_rental_shop;
+package refactoring.yj.ch01.example.video_rental_shop;
 
 public class Rental {
     private Movie _movie;
