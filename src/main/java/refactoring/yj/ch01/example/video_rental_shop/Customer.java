@@ -27,7 +27,6 @@ public class Customer {
 
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            double thisAmount = each.getCharge();
 
             //적립 포인트 1포인트 증가
             frequentRenterPoints++;
@@ -37,10 +36,10 @@ public class Customer {
                 frequentRenterPoints++;
 
             //대여하는 비디오 정보와 대여로를 출력
-            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
 
             //현재까지 누적된 총 대여료
-            totalAmount += thisAmount;
+            totalAmount += each.getCharge();
         }
 
         // footer 추가
