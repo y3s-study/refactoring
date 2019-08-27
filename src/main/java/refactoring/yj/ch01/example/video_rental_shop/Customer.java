@@ -20,7 +20,6 @@ public class Customer {
     }
 
     public String statement() {
-        double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = _rentals.elements();
         String result = getName() + " 고객님의 대여 기록 \n";
@@ -33,14 +32,21 @@ public class Customer {
 
             //대여하는 비디오 정보와 대여로를 출력
             result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
-
-            //현재까지 누적된 총 대여료
-            totalAmount += each.getCharge();
         }
 
         // footer 추가
-        result += "누적 대여료 : " + String.valueOf(totalAmount) + "\n";
+        result += "누적 대여료 : " + String.valueOf(getTotalCharge()) + "\n";
         result += "적립 포인트 : " + String.valueOf(frequentRenterPoints);
+        return result;
+    }
+
+    private double getTotalCharge() {
+        double result = 0;
+        Enumeration<Rental> rentals = _rentals.elements();
+        while (rentals.hasMoreElements()) {
+            Rental each = rentals.nextElement();
+            result += each.getCharge();
+        }
         return result;
     }
 }
