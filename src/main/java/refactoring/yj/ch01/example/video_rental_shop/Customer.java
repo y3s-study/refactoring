@@ -27,7 +27,7 @@ public class Customer {
 
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
-            double thisAmount = amountFor(each);
+            double thisAmount = each.getCharge();
 
             //적립 포인트 1포인트 증가
             frequentRenterPoints++;
@@ -47,9 +47,5 @@ public class Customer {
         result += "누적 대여료 : " + String.valueOf(totalAmount) + "\n";
         result += "적립 포인트 : " + String.valueOf(frequentRenterPoints);
         return result;
-    }
-
-    private double amountFor(Rental rental) {
-        return rental.getCharge();
     }
 }
