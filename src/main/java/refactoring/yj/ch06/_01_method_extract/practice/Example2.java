@@ -8,10 +8,8 @@ public class Example2 {
     private String name;
 
     void printOwing() {
-        List<Order> orders = this.orders;
-
         printBanner();
-        double outstanding = getOutstanding(orders);
+        double outstanding = getOutstanding();
         printDetail(outstanding);
     }
 
@@ -21,9 +19,9 @@ public class Example2 {
         System.out.println("****************");
     }
 
-    private double getOutstanding(List<Order> orders) {
+    private double getOutstanding() {
         double outstanding = 0.0;
-        for (Order order : orders) {
+        for (Order order : this.orders) {
             outstanding += order.getAmount();
         }
         return outstanding;
