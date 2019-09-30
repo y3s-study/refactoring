@@ -9,26 +9,28 @@ public class Example2 {
 
     void printOwing() {
         List<Order> orders = this.orders;
-        double outstanding = 0.0;
 
         printBanner();
-
-        // 외상액 계산
-        for (Order order : orders) {
-            outstanding += order.getAmount();
-        }
-
+        double outstanding = getOutstanding(orders);
         printDetail(outstanding);
-    }
-
-    private void printDetail(double outstanding) {
-        System.out.println("고객명:" + name);
-        System.out.println("외상액:" + outstanding);
     }
 
     private void printBanner() {
         System.out.println("****************");
         System.out.println("*** 고객 외상 ***");
         System.out.println("****************");
+    }
+
+    private double getOutstanding(List<Order> orders) {
+        double outstanding = 0.0;
+        for (Order order : orders) {
+            outstanding += order.getAmount();
+        }
+        return outstanding;
+    }
+
+    private void printDetail(double outstanding) {
+        System.out.println("고객명:" + name);
+        System.out.println("외상액:" + outstanding);
     }
 }
