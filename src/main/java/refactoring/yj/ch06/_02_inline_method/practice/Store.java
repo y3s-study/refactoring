@@ -4,10 +4,6 @@ public class Store {
     private int numberOfLateDeliveries = 0;
 
     int getRating() {
-        return (moreThanFiveLateDeliveries()) ? 2 : 1;
-    }
-
-    private boolean moreThanFiveLateDeliveries() {
-        return numberOfLateDeliveries > 5;
+        return (numberOfLateDeliveries > 5) ? 2 : 1;
     }
 }
