@@ -5,10 +5,13 @@ import java.util.List;
 
 public class Example2 {
     private List<Order> orders = new ArrayList<>();
-    private double outstanding = 0.0;
+
     private String name;
 
     void printOwing() {
+        List<Order> orders = this.orders;
+        double outstanding = 0.0;
+
         // 배너 출력
         System.out.println("****************");
         System.out.println("*** 고객 외상 ***");

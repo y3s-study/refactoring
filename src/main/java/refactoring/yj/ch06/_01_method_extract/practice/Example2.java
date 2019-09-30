@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Example2 {
     private List<Order> orders = new ArrayList<>();
-    private double outstanding = 0.0;
     private String name;
 
     void printOwing() {
+        List<Order> orders = this.orders;
+        double outstanding = 0.0;
+
         printBanner();
 
         // 외상액 계산
