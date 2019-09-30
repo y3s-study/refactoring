@@ -18,7 +18,10 @@ public class Example2 {
             outstanding += order.getAmount();
         }
 
-        // 세부 내역 출력
+        printDetail(outstanding);
+    }
+
+    private void printDetail(double outstanding) {
         System.out.println("고객명:" + name);
         System.out.println("외상액:" + outstanding);
     }
