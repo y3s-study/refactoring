@@ -9,10 +9,7 @@ public class Example2 {
     private String name;
 
     void printOwing() {
-        // 배너 출력
-        System.out.println("****************");
-        System.out.println("*** 고객 외상 ***");
-        System.out.println("****************");
+        printBanner();
 
         // 외상액 계산
         for (Order order : orders) {
@@ -22,5 +19,11 @@ public class Example2 {
         // 세부 내역 출력
         System.out.println("고객명:" + name);
         System.out.println("외상액:" + outstanding);
+    }
+
+    private void printBanner() {
+        System.out.println("****************");
+        System.out.println("*** 고객 외상 ***");
+        System.out.println("****************");
     }
 }
