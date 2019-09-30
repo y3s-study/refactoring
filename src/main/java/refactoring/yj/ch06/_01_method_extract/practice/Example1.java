@@ -5,13 +5,15 @@ public class Example1 {
 
     void printOwing(double amount) {
         printBanner();
-
-        // 세부 정보 출력
-        System.out.println("name:" + name);
-        System.out.println("amount:" + amount);
+        printDetail(amount);
     }
 
     private void printBanner() {
         System.out.println("=== Banner ===");
+    }
+
+    private void printDetail(double amount) {
+        System.out.println("name:" + name);
+        System.out.println("amount:" + amount);
     }
 }
