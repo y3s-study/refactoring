@@ -5,9 +5,18 @@ public class Order2 {
     private int itemPrice;
 
     public double price() {
-        // 결제액(price) = 총 구매액(base price) - 대량 구매 할인(quantity discount) + 배송비(shipping)
-        return quantity * itemPrice -
-                Math.max(0, quantity - 500) * itemPrice * 0.05 +
-                Math.min(quantity * itemPrice * 0.1, 100.0);
+        return basePrice() - quantityDiscount() + shipping();
+    }
+
+    private int basePrice() {
+        return quantity * itemPrice;
+    }
+
+    private double quantityDiscount() {
+        return Math.max(0, quantity - 500) * itemPrice * 0.05;
+    }
+
+    private double shipping() {
+        return Math.min(basePrice() * 0.1, 100.0);
     }
 }
