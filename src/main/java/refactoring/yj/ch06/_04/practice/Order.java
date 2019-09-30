@@ -5,15 +5,18 @@ public class Order {
     private int itemPrice;
 
     public double getPrice() {
-        int basePrice = quantity * itemPrice;
-        double discountFactor;
+        return basePrice() * discountFactor();
+    }
 
-        if (basePrice > 1000) {
-            discountFactor = 0.95;
+    private double discountFactor() {
+        if (basePrice() > 1000) {
+            return 0.95;
         } else {
-            discountFactor = 0.98;
+            return 0.98;
         }
+    }
 
-        return basePrice * discountFactor;
+    private int basePrice() {
+        return quantity * itemPrice;
     }
 }
