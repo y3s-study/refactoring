@@ -7,16 +7,38 @@ public class Haggis {
     private int delay;
 
     public double getDistanceTravelled(int time) {
-        double result;
-        double acc = primaryForce * mass;
-        int primaryTime = Math.min(time, delay);
-        result = 0.5 * acc * primaryTime * primaryTime;
-        int secondaryTime = time - delay;
-        if (secondaryTime > 0) {
-            double primaryVel = acc * delay;
-            acc = (primaryForce + secondaryForce) / mass;
-            result += primaryVel * secondaryTime + 0.5 * acc * secondaryTime * secondaryTime;
+        return primaryDistance(time) + secondaryDistance(time);
+    }
+
+    private double primaryDistance(int time) {
+        return 0.5 * primaryAcc() * primaryTime(time) * primaryTime(time);
+    }
+
+    private double secondaryDistance(int time) {
+        if (secondaryTime(time) > 0) {
+            return primaryVel() * secondaryTime(time) + 0.5 * secondaryAcc() * secondaryTime(time) * secondaryTime(time);
+        } else {
+            return 0;
         }
-        return result;
+    }
+
+    private int primaryTime(int time) {
+        return Math.min(time, delay);
+    }
+
+    private int secondaryTime(int time) {
+        return time - delay;
+    }
+
+    private double primaryAcc() {
+        return primaryForce * mass;
+    }
+
+    private double primaryVel() {
+        return primaryAcc() * delay;
+    }
+
+    private double secondaryAcc() {
+        return (primaryForce + secondaryForce) / mass;
     }
 }
