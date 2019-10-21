@@ -4,7 +4,7 @@ public class Account2 {
     private AccountType type;
 
     double interestForAmountDays(double amount, int days) {
-        return type.getInterestRate() * amount * days / 365;
+        return getInterestRate() * amount * days / 365;
     }
 
     public double getInterestRate() {
