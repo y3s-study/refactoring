@@ -1,9 +1,5 @@
 package refactoring.sb.ch09._07_introduce_null_object.practice;
 
-import refactoring.sb.ch09._07_introduce_null_object.practice.BillingPlan;
-import refactoring.sb.ch09._07_introduce_null_object.practice.Customer;
-import refactoring.sb.ch09._07_introduce_null_object.practice.Site;
-
 public class Example1 {
     Site site = new Site();
 
@@ -23,10 +19,10 @@ public class Example1 {
 //        else weeksDelinquent = customer.getPaymentHistory().getWeeksDelinquentInLastYear();
 
         if(!customer.isNull()) {
-            customer.setBillingPlan(BillingPlan.special());
+            customer.setPlan(BillingPlan.special());
         }
 
-        customer.setBillingPlan((BillingPlan.special()));
+        customer.setPlan((BillingPlan.special()));
 
         String customerName = customer.getName();
 

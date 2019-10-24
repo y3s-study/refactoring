@@ -10,10 +10,10 @@ public class Example2 {
                     sendAlert();
                     found = "Don";
                 }
-            }
-            if(people[i].equals("John")) {
-                sendAlert();
-                found = "John";
+                if(people[i].equals("John")) {
+                    sendAlert();
+                    found = "John";
+                }
             }
         }
         someLaterCode(found);

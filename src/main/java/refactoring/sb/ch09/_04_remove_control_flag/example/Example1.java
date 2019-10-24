@@ -10,10 +10,11 @@ public class Example1 {
                     sendAlert();
                     found = true;
                 }
-            }
-            if(people[i].equals("John")) {
-                sendAlert();
-                found = true;
+
+                if(people[i].equals("John")) {
+                    sendAlert();
+                    found = true;
+                }
             }
         }
     }

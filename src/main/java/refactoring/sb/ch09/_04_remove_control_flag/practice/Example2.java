@@ -8,18 +8,16 @@ public class Example2 {
     }
 
     private String foundMiscreant(String[] people) {
-        String found = "";
         for(int i = 0; i < people.length; i++) {
-            if(found.equals("")) {
-                if(people[i].equals("Don")) {
-                    sendAlert();
-                    return "Don";
-                }
+            if(people[i].equals("Don")) {
+                sendAlert();
+                return "Don";
             }
             if(people[i].equals("John")) {
                 sendAlert();
                 return "John";
             }
+
         }
         return "";
     }

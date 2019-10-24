@@ -5,7 +5,7 @@ import refactoring.sb.ch09._07_introduce_null_object.practice.PaymentHistory;
 public class Customer implements Nullable {
     private String name;
 
-    public void setBillingPlan(BillingPlan billingPlan) {
+    public void setPlan(BillingPlan billingPlan) {
         this.billingPlan = billingPlan;
     }
 
